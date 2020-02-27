@@ -67,9 +67,11 @@ class SchedulerFrame extends JFrame {
 
         File [] files = startFolder.listFiles();
         
-        for (File f : files)
-            if (f.isDirectory()) foldersCombo.addItem("" + f.getName());
-        
+        for (File f : files) {
+            if (f.isDirectory()) {
+                foldersCombo.addItem("" + f.getName());
+            }
+        }
         
         saveFolder = new File("../TASK/" + foldersCombo.getSelectedItem());
         

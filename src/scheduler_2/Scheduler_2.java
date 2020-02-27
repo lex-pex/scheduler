@@ -11,13 +11,21 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+/**
+ * Main class - application entry point 
+ */
 public class Scheduler_2 {
 
     public static void main(String[] args) {
+
+        /**
+         * The welcome sound on app launch 
+         */ 
         Sound sound = new Sound();
         sound.openSound();
         
         try {
+
             UIManager.LookAndFeelInfo[] ex = UIManager.getInstalledLookAndFeels();
 
             for(int i = 0; i < ex.length; ++i) {
@@ -34,7 +42,12 @@ public class Scheduler_2 {
             System.out.println(exc);
         }
         
+        /**
+         * EventQueue helps to avoid potential damage
+         * thant could happen with Awt library usage
+         */
         EventQueue.invokeLater(new Runnable() {
+
             @Override
             public void run() {
                 SchedulerFrame f = new SchedulerFrame();
@@ -57,6 +70,7 @@ public class Scheduler_2 {
                 });
                 location(f);
                 f.setVisible(true);
+                
             }
         });
     }
