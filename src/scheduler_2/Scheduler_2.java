@@ -23,11 +23,12 @@ public class Scheduler_2 {
          */ 
         Sound sound = new Sound();
         sound.openSound();
-        
+
+        /**
+         * Walk through default UI sets
+         */
         try {
-
             UIManager.LookAndFeelInfo[] ex = UIManager.getInstalledLookAndFeels();
-
             for(int i = 0; i < ex.length; ++i) {
                 UIManager.LookAndFeelInfo info = ex[i];
                 if (info.getName().equalsIgnoreCase("Windows")) {
@@ -45,11 +46,13 @@ public class Scheduler_2 {
         /**
          * EventQueue helps to avoid potential damage
          * thant could happen with Awt library usage
+         * So it is safer to run it in separate thread 
          */
         EventQueue.invokeLater(new Runnable() {
 
             @Override
             public void run() {
+
                 SchedulerFrame f = new SchedulerFrame();
                 f.setSize(800, 350);
                 iconochka(f);
@@ -70,11 +73,14 @@ public class Scheduler_2 {
                 });
                 location(f);
                 f.setVisible(true);
-                
+
             }
         });
     }
-    
+
+    /**
+     * Set the icon to the main app window 
+     */
     public static void iconochka(JFrame f) {
         URL aboutUrl = f.getClass().getResource("/img/notebook.png");
         Image img = Toolkit.getDefaultToolkit().getImage(aboutUrl);

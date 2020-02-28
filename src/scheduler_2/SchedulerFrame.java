@@ -46,20 +46,23 @@ class SchedulerFrame extends JFrame {
     Color textColor;
     
     public SchedulerFrame() {
-        
+
         store = new HashMap<>();
         font = new Font("", 15, 15);
-                
+
         backColor = new Color(140, 140, 140);
         textColor = new Color(30, 30, 30);
-        
+
         foldersCombo = new JComboBox();
         foldersCombo.setBackground(backColor);
         foldersCombo.setForeground(textColor);
         foldersCombo.setFont(font);
         foldersCombo.setPreferredSize(new Dimension(180, 25));
         foldersCombo.setEditable(true);
-        
+
+        /**
+         * Hardcoded default directory 
+         */
         startFolder = new File("../TASK");
 //        startFolder = new File("/home/lexis/Dropbox/scheduler/Scheduler_2");
         
@@ -189,7 +192,7 @@ class SchedulerFrame extends JFrame {
         
         readPath();
     }
-        
+
     public void pushInMap(boolean folderEvent) {
         newTitle = entryField.getText();
         newText = textArea.getText();

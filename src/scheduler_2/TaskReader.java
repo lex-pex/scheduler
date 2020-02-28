@@ -8,11 +8,11 @@ import java.util.Scanner;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 
-public class TaskReader implements Runnable{
+public class TaskReader implements Runnable {
     private final Map<String, Task> store;
     private final JComboBox combo;
     File startFolder;
-    
+
     public TaskReader(Map<String, Task> store, JComboBox combo, File folder) {
         this.combo = combo; this.store = store; 
         this.startFolder = folder;

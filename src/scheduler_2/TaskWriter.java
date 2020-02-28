@@ -8,11 +8,12 @@ import java.util.Map;
 import javax.swing.JComboBox;
 
 public class TaskWriter implements Runnable {
+
     private final Map<String, Task> store;
     JComboBox combo;
     String title;
     File folder;
-    
+
     public TaskWriter(Map <String, Task> store, JComboBox combo, File folder) {
         this.store = store; this.combo = combo; this.folder = folder;
     }
